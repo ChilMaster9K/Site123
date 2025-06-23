@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новая заявка - Грузовозофф</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Грузовозофф</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="create-order.html">Новая заявка</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="orders.html">Мои заявки</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <span class="nav-link user-name">Иван Иванов</span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link logout-btn" href="#">Выйти</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h2 class="mb-4">Новая заявка на перевозку</h2>
+        
+        <form id="orderForm">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="date" class="form-label">Дата и время перевозки</label>
+                    <input type="datetime-local" class="form-control" id="date" required>
+                    <div class="invalid-feedback">Пожалуйста, укажите дату и время</div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="cargoType" class="form-label">Тип груза</label>
+                    <select class="form-select" id="cargoType" required>
+                        <option value="" selected disabled>Выберите тип груза</option>
+                        <option value="fragile">Хрупкое</option>
+                        <option value="perishable">Скоропортящееся (требуется рефрижератор)</option>
+                        <option value="animals">Животные</option>
+                        <option value="liquid">Жидкость</option>
+                        <option value="furniture">Мебель</option>
+                        <option value="trash">Мусор</option>
+                        <option value="other">Другое</option>
+                    </select>
+                    <div class="invalid-feedback">Пожалуйста, выберите тип груза</div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <label for="weight" class="form-label">Вес груза (кг)</label>
+                    <input type="number" class="form-control" id="weight" min="1" required>
+                    <div class="invalid-feedback">Пожалуйста, укажите вес груза</div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="length" class="form-label">Длина (м)</label>
+                    <input type="number" step="0.1" class="form-control" id="length" min="0.1">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="width" class="form-label">Ширина (м)</label>
+                    <input type="number" step="0.1" class="form-control" id="width" min="0.1">
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="fromAddress" class="form-label">Адрес отправления</label>
+                    <input type="text" class="form-control" id="fromAddress" required>
+                    <div class="invalid-feedback">Пожалуйста, укажите адрес отправления</div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="toAddress" class="form-label">Адрес доставки</label>
+                    <input type="text" class="form-control" id="toAddress" required>
+                    <div class="invalid-feedback">Пожалуйста, укажите адрес доставки</div>
+                </div>
+            </div>
+            
+            <div class="mb-3">
+                <label for="comments" class="form-label">Дополнительные комментарии</label>
+                <textarea class="form-control" id="comments" rows="3"></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Отправить заявку</button>
+        </form>
+    </div>
+
+    <footer class="bg-dark text-white mt-5 py-4">
+        <div class="container text-center">
+            <p>© 2024 Грузовозофф. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
